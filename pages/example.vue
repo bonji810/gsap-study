@@ -63,10 +63,47 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default {
   mounted() {
+    gsap.from("[data-id='main-title']", 1, {
+      y: '120%',
+      ease: Power4.easeOut,
+      stagger: {
+        from: 'random',
+        amount: 0.4
+      }
+    })
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        markers: true,
+        trigger: "[data-id='second-section']",
+        start: "top center",
+        end: "bottom",
+        toggleActions: "play pause resume reset"
+      }
+    })
+    tl2.from("[data-id='card-image']", 0.8, {
+      y: '30%',
+      opacity: 0,
+      ease: Power4.easeOut
+    })
+    .from("[data-id='card-box']", 0.8, {
+      width: 0,
+      ease: Power4.easeOut
+    },'-=0.4')
   },
   methods: {
     boxClick() {
       console.log('circleclick!')
+      const tl = gsap.timeline();
+      tl.to("[data-id='box']", 1, {
+        scale: 2,
+        rotate: '360deg',
+        ease: Power4.easeOut
+      })
+      .to("[data-id='box']", 1, {
+        scale: 1,
+        rotate: '-360deg',
+        ease: Power4.easeOut
+      })
     }
   }
 }
