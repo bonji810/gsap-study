@@ -32,7 +32,8 @@
           <div class="card-container">
             <div class="container">
               <div class="inner">
-                <p class="name">JUN MIKAI / 三海　純</p>
+                <p class="name">JUN MIKAI</p>
+                <p class="subname">三海　純</p>
                 <p class="text">
                   実際、1日15〜16時間勉強するって普通のことだと思ってたんですよ。<br>
                   寝ることと食べること以外の時間は1日頑張るっていうのは、
@@ -71,7 +72,7 @@ export default {
         amount: 0.4
       }
     })
-    const tl2 = gsap.timeline({
+    const timeline = gsap.timeline({
       scrollTrigger: {
         markers: true,
         trigger: "[data-id='second-section']",
@@ -80,7 +81,7 @@ export default {
         toggleActions: "play pause resume reset"
       }
     })
-    tl2.from("[data-id='card-image']", 0.8, {
+    timeline.from("[data-id='card-image']", 0.8, {
       y: '30%',
       opacity: 0,
       ease: Power4.easeOut
@@ -172,10 +173,15 @@ export default {
   }
 
   > .container > .inner > .name {
-    font-size: 2.4rem;
-    margin-bottom: 32px;
+    font-size: 4.4rem;
+    margin-bottom: 18px;
     font-weight: bold;
   }
+  > .container > .inner > .subname {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
   > .container > .image {
     position: relative;
     z-index: 2;
