@@ -51,7 +51,7 @@
     </section>
     <section class="section-container">
       <div class="container">
-
+        
       </div>
     </section>
   </div>
@@ -93,7 +93,6 @@ export default {
   },
   methods: {
     boxClick() {
-      console.log('circleclick!')
       const tl = gsap.timeline();
       tl.to("[data-id='box']", 1, {
         scale: 2,

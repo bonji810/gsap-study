@@ -57,19 +57,66 @@ export default {
   mounted() {
 
     // create scene
-    // const controller = new ScrollMagic.Controller();
-    // const tl = new TimelineMax();
-    // new ScrollMagic.Scene({
-    //   triggerElement: "[data-id='second-section']",
-    //   duration: '200%',
-    //   triggerHook: 0,
-    // })
-    //   .setTween(tl)
-    //   .setPin("[data-id='second-section']")
-    //   .addTo(controller);
+    const controller = new ScrollMagic.Controller();
+    const tl = new TimelineMax();
+    new ScrollMagic.Scene({
+      triggerElement: "[data-id='second-section']",
+      duration: '200%',
+      triggerHook: 0,
+      makers: true
+    })
+      .setTween(tl)
+      .setPin("[data-id='second-section']")
+      .addTo(controller);
 
     // timeline
-    
+    tl
+    .to("[data-id='number-first']", 2, {
+      y: - 100,
+      opacity: 0
+    })
+    .to("[data-id='text-first']", 2, {
+      y: - 100,
+      opacity: 0
+    }, '-=1.8')
+    .to("[data-id='image-first']", 2, {
+      opacity: 0,
+      scale: 1.2
+    }, '-=1.8')
+    .from("[data-id='number-second']", 2, {
+      y: 100,
+      opacity: 0
+    }, '-=1')
+    .from("[data-id='text-second']", 2, {
+      y: 100,
+      opacity: 0
+    }, '-=1.8')
+    .to("[data-id='text-second']", 2, {
+      opacity: 1
+    })
+    .to("[data-id='number-second']", 2, {
+      opacity: 1
+    })
+    .to("[data-id='number-second']", 2, {
+      y: - 100,
+      opacity: 0
+    })
+    .to("[data-id='text-second']", 2, {
+      y: - 100,
+      opacity: 0
+    }, '-=1.8')
+    .to("[data-id='image-second']", 2, {
+      opacity: 0,
+      scale: 1.2
+    }, '-=1.8')
+    .from("[data-id='number-third']", 2, {
+      y: 100,
+      opacity: 0
+    }, '-=1')
+    .from("[data-id='text-third']", 2, {
+      y: 100,
+      opacity: 0
+    }, '-=1.8')
   }
 }
 </script>
