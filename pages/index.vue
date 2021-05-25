@@ -3,9 +3,9 @@
     <section data-id="first-section" class="section-container">
       <div class="container">
         <div class="title">
-          <h1>GSAP Study</h1>
-          <p>↓scroll!!</p>
+          <h1 class="text">GSAP Study</h1>
         </div>
+        <p>↓scroll!!</p>
       </div>
     </section>
     <section data-id="second-section" class="section-container">
@@ -87,6 +87,11 @@ export default {
 
   > .container > .inner {
     box-sizing: border-box;
+  }
+
+  > .container > .title {
+    font-size: 56px;
+    margin-bottom: 40px;
   }
 }
 

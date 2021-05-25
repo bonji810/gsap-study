@@ -3,9 +3,9 @@
     <section data-id="first-section" class="section-container">
       <div class="container">
         <div class="title">
-          <h1>GSAP Study</h1>
-          <p>↓scroll!!</p>
+          <h1 class="text">GSAP Study</h1>
         </div>
+        <p class="text">↓scroll!!</p>
       </div>
     </section>
     <section data-id="second-section" class="section-container">
@@ -55,7 +55,6 @@
 import { TweenMax, TimelineMax } from 'gsap';
 export default {
   mounted() {
-
     // create scene
     const controller = new ScrollMagic.Controller();
     const tl = new TimelineMax();
@@ -134,6 +133,11 @@ export default {
 
   > .container > .inner {
     box-sizing: border-box;
+  }
+
+  > .container > .title {
+    font-size: 40px;
+    margin-bottom: 40px;
   }
 }
 
